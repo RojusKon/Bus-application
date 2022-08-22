@@ -4,9 +4,14 @@ import 'package:transit/screens/tabs/realtime_vehicles_tab.dart';
 import 'package:transit/screens/tabs/routes_tab.dart';
 import 'package:transit/screens/tabs/stops_map_tab.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   final List<_HomeScreenTab> _tabs = [
     _HomeScreenTab(
       title: 'Artimiausios stotelės',
@@ -47,7 +52,7 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // TODO: Exercise 1
-        title: Text('TODO: Exercise 1'),
+        title: Text(_currentTab.title),
         centerTitle: true,
       ),
       body: _currentTab.builder(),
