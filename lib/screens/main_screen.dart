@@ -43,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
     ),
   ];
 
-  final _currentIndex = 0;
+  var _currentIndex = 0;
 
   _HomeScreenTab get _currentTab => _tabs[_currentIndex];
 
@@ -75,6 +75,10 @@ class _MainScreenState extends State<MainScreen> {
 
   void onTabTapped(int index) {
     // TODO: Exercise 3
+    _currentIndex = index;
+    setState(() {
+
+    });
     print('Tapped index: $index, Current index: $_currentIndex');
   }
 }
